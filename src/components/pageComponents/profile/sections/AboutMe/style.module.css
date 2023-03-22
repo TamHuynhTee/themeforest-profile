@@ -1,0 +1,24 @@
+.titleSection {
+  font-size: 52px;
+  line-height: 60px;
+  margin-bottom: 35px;
+  text-align: center;
+  font-family: 'Merriweather', Georgia, serif;
+  clear: both;
+  @apply text-dark-66;
+}
+
+.contentWrapper {
+  margin-bottom: 45px;
+  float: left;
+  width: 100%;
+}
+
+.description {
+  margin-bottom: 10px;
+  line-height: 1.2em;
+  font-family: 'Merriweather', Georgia, serif;
+  clear: both;
+  @apply text-dark-66;
+  font-size: 26px;
+}

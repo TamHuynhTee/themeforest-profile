@@ -1,0 +1,71 @@
+.imageWrapper {
+  position: relative;
+  height: 320px;
+  width: 320px;
+  margin: 50px auto 35px;
+  border-radius: 160px;
+  border-radius: 50%;
+  border: 1px dashed;
+  @apply border-gray-DD;
+}
+
+.imageHolder {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin: 35px auto;
+  border-radius: 100%;
+}
+
+.imageHolder > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.nameBox {
+  text-align: center;
+}
+
+.name {
+  @apply text-dark-66;
+  font-family: 'Merriweather', Georgia, serif;
+  clear: both;
+  font-size: 52px;
+  line-height: 60px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+.greeting {
+  @apply text-dark-99;
+  width: 60%;
+  margin: 5px auto 35px;
+  line-height: 26px;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.checkoutButton {
+  padding: 15px 40px;
+  font-size: 22px;
+  border-radius: 30px;
+  @apply bg-blue-34;
+  @apply text-white;
+  line-height: 1.2em;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+
+  transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+}
+
+.checkoutButton:hover {
+  box-shadow: inset 0 0 0px 0.3em rgba(255, 255, 255, 0.5);
+}
