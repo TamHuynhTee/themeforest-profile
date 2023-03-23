@@ -1,4 +1,3 @@
-import HorizontalBar from '@/components/common/HorizontalBar';
 import TimeLine from '@/components/common/TimeLine';
 import Link from 'next/link';
 import React from 'react';
@@ -13,11 +12,11 @@ const AboutMe = (props: Props) => {
     <div id="about" className="container content-wrapper">
       {/* Title */}
       <div className="text-center">
-        <h1 className={style.titleSection}>
+        <h1 className="main-title title">
           About <span className="text-gray-AA">Me</span>
         </h1>
       </div>
-      <HorizontalBar />
+      <div className="hr"></div>
 
       {/* Description */}
       <div className={style.contentWrapper}>
@@ -27,7 +26,7 @@ const AboutMe = (props: Props) => {
           creative people.
         </h3>
       </div>
-      <HorizontalBar />
+      <div className="hr"></div>
 
       {/* Timeline */}
 

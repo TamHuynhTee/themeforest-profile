@@ -1,32 +1,91 @@
+import { capitalize } from '@/helpers/base.helper';
+import { menu } from '@/pages';
 import Link from 'next/link';
 import React from 'react';
 import style from './style.module.css';
 
-type Props = {};
-
-const menu = [
-  { label: 'about', href: '#about' },
-  { label: 'portfolio', href: '#portfolio' },
-  { label: 'services', href: '#services' },
-  { label: 'blog', href: '#blog' },
-  { label: 'contact', href: '#contact' },
-  { label: 'features', href: '#features' },
-];
+type Props = {
+  activeId?: string;
+};
 
 const Header = (props: Props) => {
+  const { activeId } = props;
+
   return (
     <header className={style.header}>
       <ul className={style.headerMenu}>
         {menu.map((e, i) => {
           return (
             <li key={i} className={style.menuItem}>
-              <Link href={e.href} className={style.menuItemLink}>
-                {e.label}
+              <Link
+                href={'#' + e}
+                className={[
+                  style.menuItemLink,
+                  activeId == e ? style.active : '',
+                ].join(' ')}
+              >
+                {capitalize(e)}
               </Link>
             </li>
           );
         })}
       </ul>
+      <div className={style.mobile}>
+        <div className={style.headerMobile}>
+          <label
+            htmlFor="toggle-mobile-menu"
+            className={style.toggleMenu}
+          ></label>
+          {/* {menu.map((e, i) => {
+            return (
+                <li key={i} className={style.menuItem}>
+                <Link
+                    href={'#' + e}
+                    className={[
+                    style.menuItemLink,
+                    activeId == e ? style.active : '',
+                    ].join(' ')}
+                >
+                    {capitalize(e)}
+                </Link>
+                </li>
+            );
+            })} */}
+        </div>
+        <input
+          type="checkbox"
+          hidden
+          id="toggle-mobile-menu"
+          className={style.toggle}
+        />
+        <div className={style.mobileMenu}>
+          <div className={style.mobileMenuHeader}>
+            <label
+              htmlFor="toggle-mobile-menu"
+              className={
+                'float-right h-10 w-10 flex items-center justify-center text-gray-AA'
+              }
+            >
+              X
+            </label>
+          </div>
+          {menu.map((e, i) => {
+            return (
+              <li key={i} className={style.menuItem}>
+                <Link
+                  href={'#' + e}
+                  className={[
+                    style.menuItemLink,
+                    activeId == e ? style.active : '',
+                  ].join(' ')}
+                >
+                  {capitalize(e)}
+                </Link>
+              </li>
+            );
+          })}
+        </div>
+      </div>
     </header>
   );
 };

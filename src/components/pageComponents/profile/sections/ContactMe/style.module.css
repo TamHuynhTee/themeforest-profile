@@ -1,0 +1,109 @@
+.contactContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.formElement:last-child {
+  margin: 0;
+}
+
+.formTitle {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 26px;
+  line-height: 36px;
+  margin-bottom: 10px;
+}
+
+.formElement {
+  list-style: none;
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.formElement label {
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  font-weight: 500;
+  margin-bottom: 3px;
+  @apply text-dark-44;
+}
+
+.formElement > input,
+.formElement > textarea {
+  margin: 0;
+}
+
+.formElement > textarea {
+  resize: none;
+}
+
+.formElement > .submitButton {
+  float: right;
+  font-size: 18px;
+  line-height: 1.2em;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  outline: none;
+
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+  @apply text-white;
+  @apply bg-blue-34;
+  border-radius: 30px;
+
+  padding: 10px 35px;
+  line-height: 1.2em;
+}
+
+.formElement > .submitButton:hover {
+  box-shadow: inset 0 0 0px 0.3em rgba(255, 255, 255, 0.5);
+}
+
+.formElement.error input,
+.formElement.error textarea {
+  border: 1px solid red !important;
+}
+
+/* Info */
+.infoContainer {
+  @apply bg-gray-EE;
+  padding: 20px 15px;
+  text-align: center;
+  float: left;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.infoContainer img {
+  /* margin-bottom: 15px; */
+  margin: 0 auto 15px;
+}
+
+.infoContainer h3 {
+  margin-bottom: 5px;
+  line-height: 1.2em;
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 26px;
+}
+.infoContainer p {
+  text-align: center;
+  font-size: 16px;
+  line-height: 25px;
+  font-family: 'Merriweather', Georgia, serif;
+  @apply text-dark-77;
+}
+
+@media screen and (max-width: 900px) {
+  .contactContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

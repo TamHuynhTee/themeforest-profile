@@ -1,5 +1,5 @@
-import { DateJS } from '@/helpers/dayjs';
 import React, { Fragment } from 'react';
+import CardEvent from '../CardEvent';
 import style from './style.module.css';
 
 type Props = {
@@ -41,28 +41,5 @@ const TimeLine = (props: Props) => {
   );
 };
 
-const CardEvent = (props: any) => {
-  const { data, direction } = props;
-
-  const styleDirection = direction == 'right' ? style.right : style.left;
-
-  return (
-    <div className={[style.timelineUnit, styleDirection].join(' ')}>
-      <div className={style.arrow}></div>
-      <div className={style.icon}>
-        <span>{DateJS.getFormatDate(data?.time, 'DD MMM')}</span>
-      </div>
-      <div className={style.dataMetaHold}>
-        <img
-          src={data?.thumbnail}
-          alt="thumbnail"
-          className={style.timelineImg}
-        />
-        <h3 className="">{data?.name}</h3>
-      </div>
-      <p>{data?.description}</p>
-    </div>
-  );
-};
 
 export default TimeLine;
