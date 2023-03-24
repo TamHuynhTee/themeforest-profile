@@ -1,13 +1,12 @@
 import { clamp, isBetween } from '@/helpers/base.helper';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const useScrollspy = (ids: string[], offset: number = 0) => {
   const [activeId, setActiveId] = useState('');
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const listener = () => {
       const scroll = window.pageYOffset;
-      console.log(`file: useScrollspy.ts:10 => scroll:`, scroll);
 
       const position = ids
         .map((id) => {

@@ -23,6 +23,7 @@ const Header = (props: Props) => {
                   style.menuItemLink,
                   activeId == e ? style.active : '',
                 ].join(' ')}
+                scroll={false}
               >
                 {capitalize(e)}
               </Link>
@@ -36,21 +37,9 @@ const Header = (props: Props) => {
             htmlFor="toggle-mobile-menu"
             className={style.toggleMenu}
           ></label>
-          {/* {menu.map((e, i) => {
-            return (
-                <li key={i} className={style.menuItem}>
-                <Link
-                    href={'#' + e}
-                    className={[
-                    style.menuItemLink,
-                    activeId == e ? style.active : '',
-                    ].join(' ')}
-                >
-                    {capitalize(e)}
-                </Link>
-                </li>
-            );
-            })} */}
+          <span className={style.mobileActiveCurrentName}>
+            {activeId || 'menu'}
+          </span>
         </div>
         <input
           type="checkbox"
@@ -78,8 +67,9 @@ const Header = (props: Props) => {
                     style.menuItemLink,
                     activeId == e ? style.active : '',
                   ].join(' ')}
+                  scroll={false}
                 >
-                  {capitalize(e)}
+                  <label htmlFor="toggle-mobile-menu">{capitalize(e)}</label>
                 </Link>
               </li>
             );

@@ -10,6 +10,7 @@
   text-align: center;
   display: inline-block;
   list-style: none;
+  margin-bottom: 5px;
 }
 .filterOption > span {
   padding: 0 5px 4px;

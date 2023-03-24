@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from 'react';
+import { OverlayImageContext } from '@/contexts/useOverlayImage';
+import React, { useCallback, useContext, useMemo, useState } from 'react';
 import style from './style.module.css';
 
 const data = [
@@ -51,20 +52,36 @@ const Portfolio = (props: Props) => {
         <Filter data={data} setShowData={setShowData} />
         <div className={style.gridGallery}>
           {showData.map((item, index) => (
-            <div className={style.gridGalleryItem} key={index}>
-              <img src={item.thumbnail} alt="image" />
-              <div className={style.overlay}>
-                <h3>{item.name}</h3>
-                <h4>{item.types.join(', ')}</h4>
-
-                <p>{item?.description}</p>
-
-                <div className={style.actions}>
-                  <button className={style.action}>View</button>
-                </div>
-              </div>
-            </div>
+            <GalleryItem image={item} key={index} />
           ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const GalleryItem = (props: any) => {
+  const { image } = props;
+  const { setShowImage, setImage } = useContext(OverlayImageContext);
+
+  const handleShow = useCallback(() => {
+    setShowImage(true);
+    setImage(image);
+  }, [image]);
+
+  return (
+    <div className={style.gridGalleryItem}>
+      <img src={image.thumbnail} alt="image" />
+      <div className={style.overlay}>
+        <h3>{image.name}</h3>
+        <h4>{image.types.join(', ')}</h4>
+
+        <p>{image?.description}</p>
+
+        <div className={style.actions}>
+          <button className={style.action} onClick={handleShow}>
+            View
+          </button>
         </div>
       </div>
     </div>

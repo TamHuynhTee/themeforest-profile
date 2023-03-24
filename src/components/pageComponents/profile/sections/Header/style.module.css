@@ -1,5 +1,5 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 100;
   width: 100%;
@@ -64,11 +64,21 @@
 }
 .mobile .headerMobile {
   height: 40px;
-  padding: 6px 10px 6px 40px;
+  padding: 6px 40px 6px;
   border: none;
   border-bottom: 1px solid #ddd;
-  /* background: url('https://mksdmcdn-9b59.kxcdn.com/awsm-wp/wp-content/themes/awsm-wp/assets/images/icon-menu.png')
-    no-repeat 10px center; */
+}
+
+.mobile .headerMobile .mobileActiveCurrentName {
+  display: block;
+  line-height: 32px;
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+  @apply text-blue-34;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
 }
 
 .mobile .headerMobile .toggleMenu {

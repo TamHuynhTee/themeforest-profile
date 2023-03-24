@@ -1,0 +1,78 @@
+.overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transform: scale(0);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.overlay.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.imageShow {
+  position: fixed;
+  z-index: 1010;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  width: auto;
+  height: max-content;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.imageShow.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.imageShow .imageWrapper {
+  @apply bg-white;
+  min-width: 400px;
+  max-width: 700px;
+  min-height: 400px;
+  max-height: 80vh;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.imageShow .imageWrapper > img {
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: calc(80vh - 33px);
+
+  object-fit: cover;
+}
+
+.imageShow .imageWrapper .actionsBox {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageShow .imageWrapper .actionsBox .close {
+  font-size: 16px;
+  @apply text-gray-BB;
+
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .imageShow .imageWrapper {
+    max-width: 300px;
+  }
+}

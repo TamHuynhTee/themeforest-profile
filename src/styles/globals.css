@@ -6,14 +6,18 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
   scroll-behavior: smooth;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 h1,
@@ -45,7 +49,7 @@ h6 {
 
 .content-wrapper.last-wrapper,
 .content-wrapper:last-child {
-  margin-bottom: 95px;
+  margin-bottom: 200px;
 }
 
 h2,

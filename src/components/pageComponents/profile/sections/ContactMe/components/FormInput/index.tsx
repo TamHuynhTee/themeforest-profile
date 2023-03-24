@@ -6,13 +6,13 @@ type FormInputType = {
   placeholder?: string;
   label: string;
   register: any;
-  errors: Record<string, any>;
+  errors?: Record<string, any>;
 };
 
 const FormInput = (props: FormInputType) => {
   const { label, type, register, name, placeholder, errors } = props;
 
-  const isError = name in errors;
+  const isError = name in (errors || {}) || false;
 
   const errMessage = errors?.[name]?.message || '';
 
@@ -34,7 +34,9 @@ const FormInput = (props: FormInputType) => {
           placeholder={placeholder}
         ></textarea>
       )}
-      <span className="block text-red-600 text-xs">{errMessage}</span>
+      <span className="block text-red-600 text-xs transition-all">
+        {errMessage}
+      </span>
     </li>
   );
 };
